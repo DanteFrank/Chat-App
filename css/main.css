@@ -1,0 +1,23 @@
+body{
+    color: #000;
+    background-image: url('../images/thought-1014406_1280.jpg');
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+}
+
+.sign-form {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.form-control {
+    box-shadow: none;
+    border-color: #e1e1e1;
+}
+
+.signup {
+    font-size: 20px;
+}
+
+form input[type = "checkbox"] {
+    margin-top: 3px !important;
+}
