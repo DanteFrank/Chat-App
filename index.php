@@ -14,7 +14,7 @@
         <div class="container mt-5">
             <form method="POST">
                 <div class="form-header">
-                    <h2>Accoutn Login</h2>
+                    <h2>Account Login</h2>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
