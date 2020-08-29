@@ -12,24 +12,24 @@
 <body>
     <div class="sign-form">
         <div class="container mt-5">
-            <form method="POST">
-                <div class="form-header">
-                    <h2>Account Login</h2>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd">
-                </div>
-                <div class="small">Forgot Passowd? <a href="forgot_pwd.php">Click Here</a></div> <br>
-                <button type="submit" class="btn btn-info btn-block btn-lg">Submit</button>
-            </form>
-            <div class="text-center small signup">Don't have an account? <a href="register.php">Register</a></div>
+           <form action="includes/login.inc.php" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Enter Passowrd</label>
+                <input type="password" class="form-control" name="pwd">
+            </div>
+
+            <button type="submit" class="btn btn-info btn-block btn-lg" name="login">Login</button>
+            <div class="small">Forgot Passowd? <a href="forgot_pwd.php">Click Here</a></div> <br>
+           </form>
+            <div class="text-center small signup">Don't have an account? <a href="register.php">Register</a>
+            </div>
         </div>
     </div>
 </body>
 </html>
+

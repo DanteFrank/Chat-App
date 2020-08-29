@@ -53,7 +53,7 @@ if (isset($_POST['register'])) {
                 elseif ($rand == 2) 
                     $profile_pic = "images/profile_img2.png";
 
-                $sql = "INSERT INTO users (users_name, user_email, user_pwd, user_country, user_gender) VALUES (?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO users (users_name, user_email, user_pwd, user_profile, user_country, user_gender) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
 
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -62,8 +62,9 @@ if (isset($_POST['register'])) {
                 } else{
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-                    mysqli_stmt_bind_param($stmt, 'sssss', $userName, $email, $hashedPwd, $country, $gender);
+                    mysqli_stmt_bind_param($stmt, 'ssssss', $userName, $email, $hashedPwd, $profile_pic, $country, $gender);
                     mysqli_stmt_execute($stmt);
+                    echo"<script> alert ('Registration Successful!')";
                     header("Location: ../index.php");
                 }
 
