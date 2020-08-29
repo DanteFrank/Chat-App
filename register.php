@@ -1,3 +1,8 @@
+<?php
+    include 'includes/register.inc.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,60 +16,61 @@
 </head>
 <body>
     <div class="sign-form">
-        <div class="container mt-5">
-            <form method="POST">
+        <div class="container mt-3">
+            <form action="includes/register.inc.php" method="post">
                 <div class="form-header">
                     <h2>Sign Up Here</h2>
                 </div>
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username"  placeholder="Username" required>
+                    <label for="username">UserName</label>
+                    <input type="text" class="form-control" name="username" palceholder="Enter Your Username" required>
+                    <span class="error"><?php echo $nameErr;?></span><br>
                 </div>
+
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="form-control" palcehodler="Enter a valid Email" required>
+                    <span class="error"><?php echo $emailErr;?></span><br>
                 </div>
+
                 <div class="form-group">
-                    <label for="pwd">Password</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password" required>
+                    <label for="Passowrd">Password</label>
+                    <input type="password" class="form-control" name="pwd" placehodler="Enter Passowrd" required>
+                    <span class="error"><?php echo $pwdErr;?></span><br>
                 </div>
+
+                <div class="form-group">
+                    <label for="confirm_pwd">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_pwd" required>
+                    <span class="error"><?php echo $pwdErr;?></span><br>
+                </div>
+
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <select name="user_country" class="form-control" required>
-                        <option>Select a country</option>
-                        <option>America</option>
-                        <option>Britain</option>
-                        <option>Canada</option>
-                        <option>Denver</option>
-                        <option>Europe</option>
-                        <option>France</option>
-                        <option>Gambia</option>
-                        <option>India</option>
-                        <option>Japan</option>
-                        <option>London</option>
-                        <option>Morroco</option>
-                        <option>Nigeria</option>
+                    <select name="country" class="form-control" required>
+                        <option value="default">Select Country</option>
+                        <option value="America">America</option>
+                        <option value="England">England</option>
+                        <option value="Nigeria">Nigeria</option>
                     </select>
+                    <span class="error"><?php echo $countryErr;?></span><br>
                 </div>
+
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <select name="gender" class="form-control" required>
-                        <option>Select Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Transgender</option>
+                        <option value="Default">Select A Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" class="form-check-input">
-                    <label class="checkbox-inline" for="exampleCheck1">I accept the terms & conditions <a href="#">Terms Of Use</a>
-                    </label>
+                    <span class="error"><?php echo $genderErr;?></span><br>
                 </div>
 
-                <button type="submit" class="btn btn-info btn-block btn-lg">Submit</button>
+                <button type="submit" class="btn btn-info btn-block btn-lg" name="register">Register</button>
             </form>
-            <div class="text-center small signup">Already have an account? <a href="index.php">Sign In</a><div>
+            <div class="text-center small">Already Have An Account? <a href="index.php">Sign In</a></div>
         </div>
     </div>
 </body>
 </html>
+
